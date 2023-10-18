@@ -34,7 +34,7 @@ resource "azurerm_subnet" "rg1-subnet-13" {
 
 resource "azurerm_resource_group" "rg2" {
   name = "SPOKE_RG_OU"
-  location = "westus"
+  location = "westus2"
 }
 
 

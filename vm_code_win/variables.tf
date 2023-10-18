@@ -8,3 +8,9 @@ variable "prefix" {
   default     = "win-vm-iis"
   description = "Prefix of the resource name"
 } */
+
+
+
+variable "resource_group_names" {
+  type = list(string)
+}
