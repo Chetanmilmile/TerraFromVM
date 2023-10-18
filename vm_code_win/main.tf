@@ -16,14 +16,14 @@ resource "azurerm_virtual_network" "vnet1" {
   resource_group_name = azurerm_resource_group.rg1.name
 }
 
-resource "azurerm_subnet" "rg1-subnet-1" {
+resource "azurerm_subnet" "rg1-subnet-12" {
   name = "HUB-wan-subnet"
   resource_group_name = azurerm_resource_group.rg1.name
   virtual_network_name = azurerm_virtual_network.rg1.name
   address_prefixes = ["10.0.1.0/24"]
 }
 
-resource "azurerm_subnet" "rg1-subnet-1" {
+resource "azurerm_subnet" "rg1-subnet-13" {
   name = "HUB-lan-subnet"
   resource_group_name = azurerm_resource_group.rg1.name
   virtual_network_name = azurerm_virtual_network.rg1.name
@@ -46,7 +46,7 @@ resource "azurerm_virtual_network" "vnet2" {
   resource_group_name = azurerm_resource_group.rg2.name
 }
 
-resource "azurerm_subnet" "rg2-subnet-1" {
+resource "azurerm_subnet" "rg2-subnet-21" {
   name = "SPOKE-app-subnet"
   resource_group_name = azurerm_resource_group.rg2.name
   virtual_network_name = azurerm_virtual_network.rg2.name
@@ -60,7 +60,7 @@ resource "azurerm_virtual_network" "vnet3" {
   resource_group_name = azurerm_resource_group.rg2.name
 }
 
-resource "azurerm_subnet" "rg2-subnet-2" {
+resource "azurerm_subnet" "rg2-subnet-22" {
   name = "SPOKE-db-subnet"
   resource_group_name = azurerm_resource_group.rg2.name
   virtual_network_name = azurerm_virtual_network.rg2.name
@@ -84,6 +84,7 @@ resource "azurerm_virtual_network_peering" "peer2_to_1" {
   remote_virtual_network_id = azurerm_virtual_network.vnet1.id
   allow_virtual_network_access = true
 }
+
 resource "azurerm_virtual_network_peering" "peer1_to_3" {
   name                      = "peer1_to_3"
   resource_group_name       = "my-resource-group"
