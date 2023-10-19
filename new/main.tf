@@ -75,10 +75,10 @@ resource "azurerm_subnet" "rg2-subnet-2" {
   virtual_network_name = azurerm_virtual_network.rg2.name
   address_prefixes = ["10.0.3.0/24"]
 }
-
+/* 
 resource "azurerm_virtual_network_peering" "vnet_peering" {
   name = "vnet_peering"
   resource_group_name = "rg1"
   remote_virtual_network_id = azurerm_virtual_network.rg2-vnet-1.id
   allow_virtual_network_access = true
-}
+} */
