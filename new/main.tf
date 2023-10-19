@@ -30,13 +30,13 @@ resource "azurerm_virtual_network" "rg1-vnet-1" {
 resource "azurerm_subnet" "rg1-subnet-1" {
   name = "HUB-wan-subnet"
   resource_group_name = azurerm_resource_group.rg1.name
-  virtual_network_name = azurerm_virtual_network.rg1.name
+  virtual_network_name = azurerm_virtual_network.rg1-vnet-1.name
   address_prefixes = ["10.0.1.0/24"]
 }
 resource "azurerm_subnet" "rg1-subnet-2" {
   name = "HUB-lan-subnet"
   resource_group_name = azurerm_resource_group.rg1.name
-  virtual_network_name = azurerm_virtual_network.rg1.name
+  virtual_network_name = azurerm_virtual_network.rg1-vnet-1.name
   address_prefixes = ["10.0.2.0/24"]
 }
 
@@ -58,7 +58,7 @@ resource "azurerm_virtual_network" "rg2-vnet-1" {
 resource "azurerm_subnet" "rg2-subnet-1" {
   name = "SPOKE-app-subnet"
   resource_group_name = azurerm_resource_group.rg2.name
-  virtual_network_name = azurerm_virtual_network.rg2.name
+  virtual_network_name = azurerm_virtual_network.rg2-vnet-1.name
   address_prefixes = ["10.0.2.0/24"]
 }
 
@@ -72,7 +72,7 @@ resource "azurerm_virtual_network" "rg2-vnet-2" {
 resource "azurerm_subnet" "rg2-subnet-2" {
   name = "SPOKE-DB-subnet-1"
   resource_group_name = azurerm_resource_group.rg2.name
-  virtual_network_name = azurerm_virtual_network.rg2.name
+  virtual_network_name = azurerm_virtual_network.rg2-vnet-2.name
   address_prefixes = ["10.0.3.0/24"]
 }
 /* 
