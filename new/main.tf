@@ -66,14 +66,14 @@ resource "azurerm_virtual_network" "rg2-vnet-2" {
   name = "SPOKE-DB-vnet"
   location = azurerm_resource_group.rg2.location
   resource_group_name = azurerm_resource_group.rg2.name
-  address_space = ["10.0.0.0/16"]
+  address_space = ["192.168.1.0/24"]
 }
 
 resource "azurerm_subnet" "rg2-subnet-2" {
   name = "SPOKE-DB-subnet-1"
   resource_group_name = azurerm_resource_group.rg2.name
   virtual_network_name = azurerm_virtual_network.rg2-vnet-2.name
-  address_prefixes = ["10.0.3.0/24"]
+  address_prefixes = ["192.168.1.0/24"]
 }
 /* 
 resource "azurerm_virtual_network_peering" "vnet_peering" {
