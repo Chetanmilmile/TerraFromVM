@@ -101,7 +101,7 @@ resource "azurerm_app_service_source_control" "sourcecontrol" {
   use_manual_integration = true
   use_mercurial      = false
 }
-
+/* 
 resource "azurerm_virtual_network" "rg2-vnet-2" {
   name = "SPOKE-DB-vnet"
   location = azurerm_resource_group.rg2.location
@@ -114,7 +114,7 @@ resource "azurerm_subnet" "rg2-subnet-2" {
   resource_group_name = azurerm_resource_group.rg2.name
   virtual_network_name = azurerm_virtual_network.rg2-vnet-2.name
   address_prefixes = ["10.0.3.0/24"]
-}
+} */
 /* 
 resource "azurerm_virtual_network_peering" "vnet_peering" {
   name = "vnet_peering"
