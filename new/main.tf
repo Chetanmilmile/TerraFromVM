@@ -17,7 +17,7 @@ provider "azurerm" {
 
 resource "azurerm_resource_group" "rg1" {
   name = "HUB_RG"
-  location = "japaneast"
+  location = "eastus"
 }
 
 resource "azurerm_virtual_network" "rg1-vnet-1" {
